@@ -136,7 +136,6 @@ end
 
 
 def team_colors(tname)
-  #"Brooklyn Nets" game_hash[:home][:team_name].value?("Brooklyn Nets")
   if game_hash[:home].value?(tname)
     game_hash[:home][:colors] 
   else
