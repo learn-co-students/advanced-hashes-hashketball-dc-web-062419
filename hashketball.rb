@@ -146,3 +146,41 @@ def team_colors(tname)
 end
 
 
+
+def team_names
+  tnames = []
+  tnames.push(game_hash[:home][:team_name])
+  tnames.push(game_hash[:away][:team_name])
+  tnames
+
+end
+  
+
+
+
+def player_numbers
+  
+  
+  
+  
+  
+  
+  
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
