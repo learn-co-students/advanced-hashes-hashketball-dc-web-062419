@@ -158,7 +158,7 @@ end
 
 def player_numbers(tname)
   
- # a = []
+  a = []
   game_hash.map do |location, data|
    
    if data.value?(tname)
@@ -169,13 +169,14 @@ def player_numbers(tname)
       
        stat.map do |name, info|
          
-       puts  info.values_at(:number)
+       a.push(info.values_at(:number))
       end
       
      end
     end
 end
 end
+a
 end
 
 
