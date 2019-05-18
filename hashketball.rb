@@ -167,18 +167,16 @@ def player_numbers(tname)
       
       if attriubute == :players
       
-       stat.each do |name, info|
+       stat.map do |name, info|
          
-         
-      
-      #stat.values_at(:number)
-    else puts false
+       puts  info.values_at(:number)
+      end
       
      end
     end
 end
 end
-
+end
 
 
 
