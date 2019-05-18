@@ -107,6 +107,7 @@ end
 
 
 def num_points_scored(player_name)
+  
   player_name = player_name.to_sym
   
   if game_hash[:home][:players].has_key?(player_name)
@@ -119,14 +120,14 @@ end
 
 
 
-def shoe_size
+def shoe_size(player_name)
   
     player_name = player_name.to_sym
   
   if game_hash[:home][:players].has_key?(player_name)
-    game_hash[:home][:players][player_name][:points] 
+    game_hash[:home][:players][player_name][:shoe] 
   else
-     game_hash[:away][:players][player_name][:points]
+     game_hash[:away][:players][player_name][:shoe]
   
   end
   
@@ -134,6 +135,15 @@ def shoe_size
 end
 
 
-
+def team_colors(tname)
+  #"Brooklyn Nets" game_hash[:home][:team_name].value?("Brooklyn Nets")
+  if game_hash[:home].value?(tname)
+    game_hash[:home][:colors] 
+  else
+     game_hash[:away][:colors]
+  
+  end
+  
+end
 
 
