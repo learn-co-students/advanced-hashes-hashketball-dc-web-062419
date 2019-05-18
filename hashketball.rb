@@ -130,8 +130,6 @@ def shoe_size(player_name)
      game_hash[:away][:players][player_name][:shoe]
   
   end
-  
-  
 end
 
 
@@ -158,16 +156,21 @@ end
 
 
 
-def player_numbers
+def player_numbers(tname)
   
-  
-  
-  
-  
-  
-  
+  a = []
+  game_hash.map do |location, data|
+   
+    data.map do |attribute, stat|
+     
+     if stat =  tname 
+       
+       puts :players[:number]
+      
+     end
+    end
 end
-
+end
 
 
 
