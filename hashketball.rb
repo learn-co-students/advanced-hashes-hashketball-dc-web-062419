@@ -158,14 +158,21 @@ end
 
 def player_numbers(tname)
   
-  a = []
+ # a = []
   game_hash.map do |location, data|
    
-    data.map do |attribute, stat|
+   if data.value?(tname)
      
-     if stat =  tname 
-       
-       puts :players[:number]
+     data.map do |attriubute, stat|
+      
+      if attriubute == :players
+      
+       stat.each do |name, info|
+         
+         
+      
+      #stat.values_at(:number)
+    else puts false
       
      end
     end
