@@ -176,14 +176,31 @@ def player_numbers(tname)
     end
 end
 end
-a.flattten
+a.flatten
 end
 
 
 
+def player_stats(name)
 
-
-
+  game_hash.map do |location, data|
+   
+    data.map do |attriubute, stat|
+          
+    if attriubute == :players
+      
+         stat.map do |player, info|   
+           
+           if player == name.to_sym
+             
+             info
+      end
+            
+    end
+    end
+   end
+  end
+end
 
 
 
