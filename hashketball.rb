@@ -232,7 +232,7 @@ def big_shoe_rebounds
  end
  end
  end
- a
+ a.join.to_i
 end
 
 
