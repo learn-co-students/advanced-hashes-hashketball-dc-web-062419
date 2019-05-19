@@ -206,6 +206,32 @@ end
 
 
 
+def big_shoe_rebounds
+  
+  #a = {}
+  a = []
+  game_hash.map do |location, data|
+   
+    data.map do |attriubute, stat|
+          
+    if attriubute == :players
+
+    stat.map do |player, info|
+      
+        #a[player] = info.values_at(:shoe)
+        a.push(info.values_at(:shoe))
+  
+ end
+ end
+ end
+ end
+ a.flatten
+ a.sort!
+ a[-1]
+end
+
+
+
 
 
 
