@@ -208,9 +208,9 @@ end
 
 def big_shoe_rebounds
   
-  #a = {}
-  a = []
-  game_hash.map do |location, data|
+  a = 0
+  b = 0
+    game_hash.map do |location, data|
    
     data.map do |attriubute, stat|
           
@@ -218,16 +218,18 @@ def big_shoe_rebounds
 
     stat.map do |player, info|
       
-        #a[player] = info.values_at(:shoe)
-        a.push(info.values_at(:shoe))
+      if info.values_at(:shoe) > b
+        b = info.values_at(:shoe)
+        #a[player] = info.values_at(:rebounds)
+        a = info.values_at(:rebounds)
+      end
+        
   
  end
  end
  end
  end
- a.flatten
- a.sort!
- a[-1]
+ a
 end
 
 
