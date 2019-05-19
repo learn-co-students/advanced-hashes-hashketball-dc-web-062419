@@ -219,11 +219,11 @@ def big_shoe_rebounds
     stat.map do |player, info|
       
      c = (info.values_at(:shoe)).join.to_i
-    #d = c.join.to_i
+    
       
       if c > b
         b = c
-        #a[player] = info.values_at(:rebounds)
+        
         a = (info.values_at(:rebounds)).join.to_i
       end
         
