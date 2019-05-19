@@ -183,6 +183,7 @@ end
 
 def player_stats(name)
 
+a = {}
   game_hash.map do |location, data|
    
     data.map do |attriubute, stat|
@@ -193,13 +194,14 @@ def player_stats(name)
            
            if player == name.to_sym
              
-             info
+            a = info
       end
             
     end
     end
    end
   end
+  a
 end
 
 
