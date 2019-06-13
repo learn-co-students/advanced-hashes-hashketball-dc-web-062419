@@ -1,10 +1,14 @@
 # Write your code here!
+require "pry"
+
+
 def game_hash
     game_hash = {
         :home => {
             :team_name => "Brooklyn Nets",
-            :colors => ["black", "white"],
-            :players => [{"Alan Anderson" => {
+            :colors => ["Black", "White"],
+            :players => 
+                [{"Alan Anderson" => {
                 :number => "0",
                 :shoe => "16",
                 :points => "22",
@@ -37,7 +41,7 @@ def game_hash
                 #:player_name = "Mason Plumlee",
                 :number => "1",
                 :shoe => "19",
-                :points => "26"
+                :points => "26",
                 :rebounds => "11",
                 :assists => "6",
                 :steals => "3",
@@ -55,11 +59,13 @@ def game_hash
                 :slam_dunks => "1"
             }}
 
-            }]},
-        :away {
+            ]
+        },
+        :away => {
             :team_name => "Charlotte Hornets",
             :colors => ["Turquoise", "Purple"],
-            :players => [ {"Jeff Adrien" => {
+            :players =>  
+                [{"Jeff Adrien" => {
                 # :player_name => "Jeff Adrien"
                 :number => "4",
                 :shoe => "18",
@@ -111,11 +117,51 @@ def game_hash
                 :slam_dunks => "12"
             }}]
 
-        }
+}
     }
+    
 
 end
 
+
+#def num_points_scored(player)
+#    game_hash.each do |team_position, data|
+ #       players_array = data[:players]
+  #      players = players_array.keys
+   #     if players.include? (player)
+    #        return data[player][:points]
+     #      else
+      #          return nil
+       #     end
+        #   end
+   # end
+
+def num_points_scored(player)
+    game_hash.each do |team_position, data|
+    players_array = data[:players]
+    players_array.each do |player_hash|
+        player_hash.each do |player_name, player_stats|
+            if player_name == player
+                binding.pry
+                return player_name[:points]
+            
+            end
+            end
+        end
+    end
+end
+
+num_points_scored("Reggie Evans")
+
+def team_colors(team_name)
+    game_hash.each do |team_position, data|
+        if data[:team_name] = team_name 
+            data[:colors].flatten
+        else
+            nil
+        end
+    end
+end
 
 
 
