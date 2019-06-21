@@ -285,14 +285,14 @@ def player_with_longest_name
         end
        end
     end
-  #  puts player_names_array
+
     player_names.each do |name|
       lengths << name.length
     end
-  #  puts lengths
+
     player_names.each do |name|
       if name.length == lengths.max
-  #      puts "Holy fuckign cows and ducks I am amazing and #{nomen} is a long named MOFO"
+
         return name
     end
   end
