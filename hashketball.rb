@@ -221,3 +221,109 @@ def big_shoe_rebounds
        end
     end
   end
+
+  ## bonus ##
+  # most_points_scored
+  def most_points_scored
+    top_player = []
+    players_list =[]
+    game_hash.each do |location, team_data|
+      team_data[:players].each do |player|
+        players_list << player
+        player.each do |player_name, stat|
+          top_player << stat[:points]
+        end
+      end
+    end
+    game_hash.each do |location, team_data|
+      team_data[:players].each do |player|
+        player.each do |player_name, stat|
+          if top_player.max == stat[:points]
+            return player_name
+          end
+        end
+      end
+    end
+  end
+
+#winning_team
+def winning_team
+game_hash
+team_points = {}
+winning_team = ""
+players_list = []
+game_hash.each do |location, team_data|
+  team = team_data[:team_name]
+  points = 0
+  team_data[:players].each do |player|
+    players_list << player
+    player.each do |player_name, stat|
+      points = points + stat[:points]
+    end
+    team_points[team] = points
+  end
+end
+puts team_points
+
+team_points.each do |team, points|
+  if points == team_points.values.max
+    return team
+  end
+end
+end
+
+#player_with_longest_name
+def player_with_longest_name
+  players_list = []
+    player_names = []
+    lengths = []
+    game_hash.each do |locus, locus_data|
+        locus_data[:players].each do |player|
+        players_list << player
+        player.each do |player_name, stat|
+          player_names << player_name
+        end
+       end
+    end
+  #  puts player_names_array
+    player_names.each do |name|
+      lengths << name.length
+    end
+  #  puts lengths
+    player_names.each do |name|
+      if name.length == lengths.max
+  #      puts "Holy fuckign cows and ducks I am amazing and #{nomen} is a long named MOFO"
+        return name
+    end
+  end
+end
+#long_name_steals_a_ton
+def long_name_steals_a_ton?
+player_steals = player_with_longest_name
+lengths = []
+players_list = []
+steals = []
+steal_success = ""
+game_hash.each do |location, team_data|
+  team_data[:players].each do |player|
+    players_list << player
+    player.each do |player_name, stat|
+      steals << stat[:steals]
+    end
+  end
+end
+game_hash.each do |location, team_data|
+  team_data[:players].each do |player|
+    player.each do |player_name, stat|
+      if stat[:steals] == steals.max
+        steal_success = player_name
+      end
+    end
+  end
+end
+print steal_success
+steal_success = player_steals
+if steal_success == player_steals
+  return true
+end
+end
