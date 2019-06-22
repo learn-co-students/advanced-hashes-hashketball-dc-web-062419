@@ -218,6 +218,7 @@ def most_points_scored
 end
 
 
+=begin 
 def winning_team
   home_points = 0
   away_points = 0
@@ -234,7 +235,8 @@ def winning_team
     end
   end
   binding.pry
-end
+end 
+=end
 
     
 
